@@ -2,7 +2,13 @@
   margin: 5vh auto;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border-radius: 0.5rem;
+  transition: transform 250ms linear;
 }
+
+.transactionHistoryTable:hover{
+  transform: scale(1.05);
+}
+
 .headersRow {
   font-size: 1.5rem;
   text-align: center;
