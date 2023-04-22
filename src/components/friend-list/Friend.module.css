@@ -12,11 +12,8 @@
     align-items: center;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border-radius: 0.5rem;
-    transition: transform 250ms linear;
 }
-.item:hover{
-    transform: scale(1.05);
-};
+
 
 .status {
     border-radius: 50%;
@@ -25,14 +22,15 @@
     width: 15px;
 }
 
-.status.online {
+.online {
+    composes: status;
     background-color: green;
 }
 
-.status.offline {
+.offline {
+    composes: status;
     background-color: red;
 }
-
 
 .avatar {
     margin: 0 auto;
