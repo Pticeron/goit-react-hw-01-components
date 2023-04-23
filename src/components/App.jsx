@@ -1,49 +1,55 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-
+// data
+import user from 'data/user';
+import data from 'data/data';
+import friends from 'data/friends';
+import transactions from 'data/transactions';
+// components
 import { Profile } from 'components/profile/Profile';
-import user from 'data/user.json';
-
 import { Statistics } from 'components/statistics/Statistics';
-import data from 'data/data.json';
-
 import { FriendList } from 'components/friend-list/FriendList';
-import friends from 'data/friends.json';
-
 import { TransactionHistory } from 'components/transaction-history/TransactionHistory';
-import transactions from 'data/transactions.json';
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <App>
+export const App = () => {
+  const { username, tag, location, avatar, stats } = user;
+
+  return (
+    <div style={{
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'center',
+      fontSize: 40,
+      color: '#010101'
+    }}>
+    
       <Profile
-        username={user.username}
-        tag={user.tag}
-        location={user.location}
-        avatar={user.avatar}
-        stats={user.stats}
+        username={username}
+        tag={tag}
+        location={location}
+        avatar={avatar}
+        stats={stats}
       />
       <Statistics title="Upload stats" stats={data} />
       <Statistics stats={data} />
       <FriendList friends={friends} />
       <TransactionHistory items={transactions} />
-    </App>
-  </React.StrictMode>
-);
-
-export const App = ({ children }) => {
-  return (
-    <div
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101',
-      }}
-    >
-      {children}
     </div>
   );
 };
+
+// const App = ({ children }) => {
+//   return (
+//     <div
+//       style={{
+//         display: 'flex',
+//         flexDirection: 'column',
+//         justifyContent: 'center',
+//         alignItems: 'center',
+//         fontSize: 40,
+//         color: '#010101',
+//       }}
+//     >
+//       {children}
+//     </div>
+//   );
+// };

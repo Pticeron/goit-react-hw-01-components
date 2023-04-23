@@ -1,5 +1,5 @@
 .profile {
-    max-width: 40%;
+    max-width: 30%;
     margin-top: 5vh;
     display: flex;
     flex-direction: column;
@@ -10,7 +10,7 @@
 }
 
 .profile:hover{
-    transform: scale(1.05);
+    transform: scale(1.03);
 }
 
 .description {
